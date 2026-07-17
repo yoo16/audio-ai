@@ -22,6 +22,7 @@
 | [docs/03-inference.md](docs/03-inference.md) | 推論と品質チューニング |
 | [docs/04-dataset.md](docs/04-dataset.md) | 学習データの必要量・録音の指針 |
 | [docs/05-troubleshooting.md](docs/05-troubleshooting.md) | エラーと対処 (ハマりどころ集) |
+| [docs/06-export.md](docs/06-export.md) | モデルのエクスポート (TorchScript / ONNX) |
 
 ## 環境
 

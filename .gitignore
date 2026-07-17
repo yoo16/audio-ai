@@ -10,5 +10,7 @@ audio_converted/
 output.txt
 transcriptions.list
 
+*.wav
+
 # Virtual environments
 .venv
