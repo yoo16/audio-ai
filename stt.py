@@ -1,8 +1,19 @@
 import os
 import glob
+
+# CUDA ライブラリ (cublas/cudnn) を明示的にロード
+import ctypes
+_nvidia_base = os.path.join(os.path.dirname(__file__), ".venv/lib/python3.12/site-packages/nvidia")
+for _rel in ("cublas/lib/libcublas.so.12", "cudnn/lib/libcudnn.so.9",
+             "cudnn/lib/libcudnn_ops.so.9", "cudnn/lib/libcudnn_cnn.so.9"):
+    try:
+        ctypes.CDLL(os.path.join(_nvidia_base, _rel), mode=ctypes.RTLD_GLOBAL)
+    except OSError:
+        pass
+
 from faster_whisper import WhisperModel
 
-# モデル初期化 (RTX 5080)
+# モデル初期化 (RTX 5060)
 model = WhisperModel("large-v3-turbo", device="cuda", compute_type="float16")
 
 input_dir = "audio/"

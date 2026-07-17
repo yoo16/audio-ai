@@ -6,6 +6,7 @@ dist/
 wheels/
 *.egg-info
 audio/
+audio_converted/
 output.txt
 transcriptions.list
 
